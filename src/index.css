@@ -1,17 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-  --color-brand--1: #ffb545;
-  --color-brand--2: #00c46a;
-
-  --color-dark--0: #242a2e;
-  --color-dark--1: #2d3439;
-  --color-dark--2: #42484d;
-  --color-light--1: #aaa;
-  --color-light--2: #ececec;
-  --color-light--3: #d6dee0;
+  --color-headline--gray-900: #212529;
+  --color-text--gray-800: #343a40;
+  --color-text--gray-700: #495057;
+  --color-text--gray-600: #6c757d;
+  --color-text--body-color: #212529;
+  --color-border--gray-400: #ced4da;
+  --color-border--gray-300: #dee2e6;
+  --color-btn--theme-danger: #dc3545;
+  --color-btn--theme-success: #198754;
+  --color-btn--theme-primary: #0d6efd;
+  --bg--gray-white: #ffffff;
 }
 
 body {
   font-family: "Barlow", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: (var(--color-headline--gray-900));
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
 }
