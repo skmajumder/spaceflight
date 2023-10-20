@@ -12,10 +12,17 @@
   --color-btn--theme-success: #198754;
   --color-btn--theme-primary: #0d6efd;
   --bg--gray-white: #ffffff;
+
+  --font-size--big: 40px;
+  --font-size--medium: 24px;
+  --font-size--regular: 16px;
+  --font-size--regular-small: 14px;
+  --font-size--small: 12px;
 }
 
 body {
   font-family: "Barlow", sans-serif;
+  font-weight: 400;
 }
 
 h1,

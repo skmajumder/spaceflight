@@ -1,5 +1,5 @@
 .breadcrumbHeadline {
-  font-size: 40px;
+  font-size: var(--font-size--big);
   font-style: normal;
   font-weight: 500;
   line-height: 48px;
@@ -7,4 +7,6 @@
 
 .breadcrumbText {
   color: var(--color-headline--gray-700);
+  font-size: var(--font-size--regular);
+  line-height: 24px;
 }
