@@ -1,8 +1,13 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AppLayout from "./pages/AppLayout/AppLayout";
+
 const App = () => {
   return (
-    <div>
-      Spaeflight
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<AppLayout />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
