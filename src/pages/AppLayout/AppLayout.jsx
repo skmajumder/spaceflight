@@ -1,11 +1,13 @@
-import styles from './AppLayout.module.css'
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
+import Filters from "../../components/Filters/Filters";
 
 const AppLayout = () => {
-    return (
-        <div>
-            Space Flight App Layout
-        </div>
-    );
+  return (
+    <>
+      <Breadcrumb />
+      <Filters/>
+    </>
+  );
 };
 
 export default AppLayout;
