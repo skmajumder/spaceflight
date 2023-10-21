@@ -24,10 +24,10 @@ const SpaceflightItem = ({ item }) => {
   } = item || {};
   return (
     <li className="col-lg-4 text-center mb-4">
-      <div className="border rounded p-4">
+      <div className={`border rounded p-4 h-100`}>
         <img
           src={img !== null ? img : NoThumb}
-          className={`${styles.imageSize} img-fluid`}
+          className={`${styles.imageSize} img-fluid mb-4`}
           alt={name}
         />
         <p className={`${styles.launchDate}`}>
