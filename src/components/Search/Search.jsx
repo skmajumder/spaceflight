@@ -15,12 +15,9 @@ const Search = () => {
     } else {
       // * Filter the spaceCraft based on the search query
       const filteredSpaceCraft = originalSpaceCraft.filter((item) => {
-        return (
-          item.mission_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.rocket.rocket_name
-            .toLowerCase()
-            .includes(searchQuery.toLowerCase())
-        );
+        return item.rocket.rocket_name
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
       });
       setSpaceCraft(filteredSpaceCraft);
     }

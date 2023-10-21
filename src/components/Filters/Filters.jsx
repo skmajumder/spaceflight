@@ -24,10 +24,10 @@ const Filters = () => {
   return (
     <section className="container">
       <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-4">
           <Search />
         </div>
-        <div className="col-lg-6 offset-lg-2">
+        <div className="col-lg-6 offset-lg-2 col-md-8 offset-md-0">
           <div className="d-flex gap-4 justify-content-between align-items-center">
             <select
               className="form-select"
