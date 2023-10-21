@@ -5,9 +5,13 @@ const SpaceflightContext = createContext();
 const BASE_URL = "https://api.spacexdata.com";
 
 const SpaceflightProvider = ({ children }) => {
+  const currentPageFromStorage = localStorage.getItem("currentPage");
+
   const [spaceCraft, setSpaceCraft] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(
+    currentPageFromStorage ? parseInt(currentPageFromStorage, 10) : 1
+  );
 
   const itemsPerPage = 9; // Items per page
 
@@ -42,13 +46,14 @@ const SpaceflightProvider = ({ children }) => {
     };
   }, []);
 
+  const changePage = (newPage) => {
+    setCurrentPage(newPage);
+    localStorage.setItem("currentPage", newPage); // Store the new page in localStorage
+  };
+
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const pagedSpaceCraft = spaceCraft.slice(startIndex, endIndex);
-
-  const changePage = (newPage) => {
-    setCurrentPage(newPage);
-  };
 
   const value = {
     spaceCraft,
@@ -56,7 +61,7 @@ const SpaceflightProvider = ({ children }) => {
     currentPage,
     changePage,
     itemsPerPage,
-    pagedSpaceCraft
+    pagedSpaceCraft,
   };
 
   return (
