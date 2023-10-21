@@ -4,11 +4,11 @@ import SpaceflightItem from "../SpaceflightItem/SpaceflightItem";
 import Spinner from "../Spinner/Spinner";
 
 const SpaceflightList = () => {
-  const { spaceCraft, isLoading } = useSpaceflight();
+  const { isLoading, pagedSpaceCraft } = useSpaceflight();
 
   if (isLoading) return <Spinner />;
 
-  if (!spaceCraft.length)
+  if (!pagedSpaceCraft.length)
     return (
       <Message message="No data available now, please refresh the page again or check your internet connection" />
     );
@@ -19,7 +19,7 @@ const SpaceflightList = () => {
         <div className="row">
           <div className="col-lg-12 pt-5">
             <ul className="row list-unstyled">
-              {spaceCraft.map((item) => (
+              {pagedSpaceCraft.map((item) => (
                 <SpaceflightItem key={item.mission_name} item={item} />
               ))}
             </ul>

@@ -18,7 +18,7 @@ const AppLayout = () => {
       </section>
       <Filters />
       <SpaceflightList />
-      <Pagination />
+      <Pagination/>
       <Footer>Created by the brilliant minds behind SpaceX</Footer>
     </>
   );
