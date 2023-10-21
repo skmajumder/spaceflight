@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./pages/AppLayout/AppLayout";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import SpaceflightProvider from "./contexts/SpaceflightProvider";
+import { SpaceflightProvider } from "./contexts/SpaceflightProvider";
 
 const App = () => {
   return (
