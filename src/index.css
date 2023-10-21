@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap");
 
+/* These CSS variables are global, so they are available in all CSS modules */
 :root {
   --color-headline--gray-900: #212529;
   --color-text--gray-800: #343a40;
