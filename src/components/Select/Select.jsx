@@ -1,11 +1,12 @@
-const Select = ({ children }) => {
+const Select = ({ options }) => {
   return (
-    <>
-      <select className="form-select" aria-label="Default select example">
-        <option defaultValue>{children}</option>
-        <option value="1">One</option>
-      </select>
-    </>
+    <select className="form-select" aria-label="Default select example">
+      {options.map((option, index) => (
+        <option key={index} value={index}>
+          {option}
+        </option>
+      ))}
+    </select>
   );
 };
 
