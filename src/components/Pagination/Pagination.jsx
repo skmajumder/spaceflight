@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useSpaceflight from "../../hooks/useSpaceflight";
 
 const Pagination = () => {
@@ -20,15 +19,12 @@ const Pagination = () => {
     }
 
     if (totalPages <= visiblePageCount) {
-      // If there are fewer pages than visiblePageCount, display all page numbers.
       return pageNumbers;
     } else {
-      // Calculate which page numbers to display, considering ellipsis.
       const halfVisibleCount = Math.floor(visiblePageCount / 2);
       const firstPage = Math.max(1, currentPage - halfVisibleCount);
       const lastPage = Math.min(totalPages, firstPage + visiblePageCount - 1);
 
-      // Add ellipsis if needed.
       const result = [];
       if (firstPage > 1) {
         result.push(1);
