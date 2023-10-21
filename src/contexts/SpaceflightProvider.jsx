@@ -15,6 +15,9 @@ const SpaceflightProvider = ({ children }) => {
   );
   const [isChecked, setIsChecked] = useState(false);
 
+  const [optionLaunchStatus, setOptionLaunchStatus] = useState(0);
+  const [optionLaunchDate, setOptionLaunchDate] = useState(0);
+
   // * Items per page
   const itemsPerPage = 9;
   let startIndex = (currentPage - 1) * itemsPerPage;
@@ -72,10 +75,63 @@ const SpaceflightProvider = ({ children }) => {
         (item) => item.upcoming
       );
       setSpaceCraft(upcomingSpaceCraft);
+      setOptionLaunchStatus(0);
     } else {
       setSpaceCraft(originalSpaceCraft);
     }
   };
+
+  useEffect(() => {
+    if (optionLaunchStatus === 0) {
+      setSpaceCraft(originalSpaceCraft);
+    }
+    if (optionLaunchStatus === 1) {
+      const launchStatusFailed = originalSpaceCraft.filter(
+        (item) => item.launch_success === false
+      );
+      setSpaceCraft(launchStatusFailed);
+    }
+    if (optionLaunchStatus === 2) {
+      const launchStatusSuccess = originalSpaceCraft.filter(
+        (item) => item.launch_success === true
+      );
+      setSpaceCraft(launchStatusSuccess);
+    }
+
+    return () => {};
+  }, [optionLaunchStatus, originalSpaceCraft]);
+
+  useEffect(() => {
+    if (optionLaunchDate === 1) {
+      const oneWeekAgo = new Date();
+      oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+      const filteredItems = originalSpaceCraft.filter(
+        (item) => new Date(item.launch_date_utc) > oneWeekAgo
+      );
+      setSpaceCraft(filteredItems);
+    } else if (optionLaunchDate === 2) {
+      const oneMonthAgo = new Date();
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+      const filteredItems = originalSpaceCraft.filter(
+        (item) => new Date(item.launch_date_utc) > oneMonthAgo
+      );
+      setSpaceCraft(filteredItems);
+    } else if (optionLaunchDate === 3) {
+      const oneYearAgo = new Date();
+      oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+
+      const filteredItems = originalSpaceCraft.filter(
+        (item) => new Date(item.launch_date_utc) > oneYearAgo
+      );
+      setSpaceCraft(filteredItems);
+    } else if (optionLaunchDate === 0) {
+      setSpaceCraft(originalSpaceCraft);
+    }
+
+    return () => {};
+  }, [optionLaunchDate, originalSpaceCraft]);
 
   const value = {
     spaceCraft,
@@ -89,6 +145,10 @@ const SpaceflightProvider = ({ children }) => {
     originalSpaceCraft,
     isChecked,
     handleCheckboxChange,
+    optionLaunchStatus,
+    optionLaunchDate,
+    setOptionLaunchStatus,
+    setOptionLaunchDate,
   };
 
   return (
