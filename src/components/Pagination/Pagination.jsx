@@ -16,6 +16,16 @@ const Pagination = () => {
         <div className="col-lg-12">
           <nav aria-label="Page navigation">
             <ul className="pagination justify-content-center align-items-center">
+              <li
+                className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() => handlePageClick(currentPage - 1)}
+                >
+                  <span aria-hidden="true">&laquo;</span>
+                </button>
+              </li>
               {Array.from({ length: totalPages }).map((_, index) => (
                 <li
                   className={`page-item ${
@@ -31,6 +41,18 @@ const Pagination = () => {
                   </button>
                 </li>
               ))}
+              <li
+                className={`page-item ${
+                  currentPage === totalPages ? "disabled" : ""
+                }`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() => handlePageClick(currentPage + 1)}
+                >
+                  <span aria-hidden="true">&raquo;</span>
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
