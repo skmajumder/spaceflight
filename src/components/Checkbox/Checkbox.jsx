@@ -1,18 +1,7 @@
-import { useState } from "react";
 import useSpaceflight from "../../hooks/useSpaceflight";
 
 const Checkbox = ({ children }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const { onCheckboxChange } = useSpaceflight();
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-
-    if (onCheckboxChange) {
-      onCheckboxChange(!isChecked);
-    }
-  };
+  const { handleCheckboxChange, isChecked } = useSpaceflight();
 
   return (
     <div className="mb-3 form-check text-end">
