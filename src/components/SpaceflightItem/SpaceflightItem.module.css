@@ -1,0 +1,55 @@
+.imageSize {
+  width: 124px;
+  height: 124px;
+}
+
+.launchDate {
+  color: var(--color-text--gray-600);
+  font-size: var(--font-size--regular);
+  line-height: 24px;
+}
+
+.launchDate time {
+  color: var(--color-text--gray-800);
+}
+
+.spaceflightName {
+  font-size: var(--font-size--medium);
+  font-weight: 500;
+  line-height: 29px;
+  text-decoration: none;
+}
+
+.spaceflightName a {
+  text-decoration: none;
+  color: var(--color-text--gray-900);
+}
+
+.rocketName {
+  color: var(--color-text--gray-700);
+  font-size: var(--font-size--regular-small);
+  line-height: 21px;
+}
+
+.launchStatus {
+  color: var(--color-text--gray-600);
+  font-size: var(--font-size--regular);
+  font-weight: 500;
+  line-height: 19.2px;
+}
+
+.statusFailed {
+  background-color: var(--color-btn--theme-danger);
+  color: var(--bg--gray-white);
+  border-radius: 4px;
+  padding: 4.2px 7.8px;
+  align-items: center;
+}
+
+.statusSuccess {
+  background-color: var(--color-btn--theme-success);
+  color: var(--bg--gray-white);
+  border-radius: 4px;
+  padding: 4.2px 7.8px;
+  align-items: center;
+}

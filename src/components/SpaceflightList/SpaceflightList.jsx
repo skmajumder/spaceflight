@@ -15,7 +15,7 @@ const SpaceflightList = () => {
 
   return (
     <>
-      <div className="container">
+      <main className="container">
         <div className="row">
           <div className="col-lg-12 pt-5">
             <ul className="row list-unstyled">
@@ -25,7 +25,7 @@ const SpaceflightList = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };
