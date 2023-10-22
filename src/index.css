@@ -39,6 +39,6 @@ input,
 select,
 textarea,
 button,
-label {
+label, option {
   font-family: inherit;
 }

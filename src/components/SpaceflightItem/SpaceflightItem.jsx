@@ -23,7 +23,7 @@ const SpaceflightItem = ({ item }) => {
     launch_success: status,
   } = item || {};
   return (
-    <li className="col-lg-4 col-md-6 text-center mb-4">
+    <li className="col-lg-4 col-md-6 col-sm-12 text-center mb-4">
       <div className={`border rounded p-4 h-100`}>
         <img
           src={img !== null ? img : NoThumb}

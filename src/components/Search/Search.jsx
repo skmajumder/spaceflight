@@ -25,15 +25,13 @@ const Search = () => {
 
   return (
     <div className="input-group">
-      <div className="form-outline">
-        <input
+      <input
           type="Search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="search..."
           className="form-control"
         />
-      </div>
       <button type="button" className="btn btn-primary" onClick={handleSearch}>
         <FaSearch />
       </button>

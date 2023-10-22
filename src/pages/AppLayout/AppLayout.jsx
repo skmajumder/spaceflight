@@ -9,10 +9,10 @@ const AppLayout = () => {
   return (
     <>
       <Breadcrumb />
-      <section className="container">
+      <section className="container d-none d-lg-block d-md-block">
         <div className="row">
           <div className="col-lg-12">
-            <Checkbox>Show upcomming only</Checkbox>
+            <Checkbox alignClass="text-end">Show upcomming only</Checkbox>
           </div>
         </div>
       </section>
